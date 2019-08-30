@@ -1,0 +1,1 @@
+select * from wanted_items
