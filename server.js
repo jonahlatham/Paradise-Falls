@@ -18,7 +18,7 @@ massive(process.env.DATABASE_URL)
 
 app.get('/api/paradisefalls', (req, res, next) => {
     const db = app.get('db')
-    db.get_items()
+    db.wanted_items.find()
         .then((items) => {
             res.send(items)
         })
@@ -26,8 +26,8 @@ app.get('/api/paradisefalls', (req, res, next) => {
 
 app.post('/api/paradisefalls', (req, res, next) => {
     const db = app.get('db')
-    const { name, price, amount_saved, amount_left } = req.body
-    db.insert_items({ name, price, amount_saved, amount_left })
+    const { name, price, amount_saved} = req.body
+    db.wanted_items.insert({ name, price, amount_saved})
         .then((items) => {
             res.send(items)
         })
