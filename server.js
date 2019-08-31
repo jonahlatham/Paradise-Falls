@@ -15,10 +15,10 @@ massive(process.env.DATABASE_URL)
         app.set('db', dbInstance)
     })
 ///////////////////////////////////////////////////
-
+//Items
 app.get('/api/paradisefalls', (req, res, next) => {
     const db = app.get('db')
-    db.get_items()
+    db.wanted_items.find()
         .then((items) => {
             res.send(items)
         })
@@ -26,17 +26,28 @@ app.get('/api/paradisefalls', (req, res, next) => {
 
 app.post('/api/paradisefalls', (req, res, next) => {
     const db = app.get('db')
-    const { name, price, amount_saved, amount_left } = req.body
-    db.insert_items({ name, price, amount_saved, amount_left })
+    const { name, price, amount_saved} = req.body
+    db.wanted_items.insert({ name, price, amount_saved})
         .then((items) => {
             res.send(items)
         })
 })
 
 ///////////////////////////////////////////////////
-const port = process.env.PORT || 7090
+//People
+
+app.get('/api/paridisefalls/people', (req, res, next)=>{
+    const db = app.get('db')
+    db.people.find()
+    .then((people)=>{
+        res.send(people)
+    })
+})
+
+///////////////////////////////////////////////////
+const port = process.env.PORT || 7070
 app.listen(port, () => {
     console.log(`Listening on port ${port}`)
 })
 
-// http://localhost:7090/api/paradisefalls
+// http://localhost:7070/api/paradisefalls

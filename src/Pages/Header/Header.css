@@ -1,0 +1,14 @@
+
+.header {
+    width: 100%;
+    padding: 20px;
+    background: #e2be64;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.link {
+    text-decoration: none;
+    color: white;
+    margin-right: 10px;
+}

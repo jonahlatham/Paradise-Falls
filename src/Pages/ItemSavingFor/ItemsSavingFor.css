@@ -1,0 +1,15 @@
+
+.flexedItems {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.savedItems {
+    margin: auto;
+    margin-bottom: 15px;
+    width: 150px;
+    box-shadow: -5px 5px 5px gray;
+    padding: 7px;
+    border-radius: 15px;
+  }

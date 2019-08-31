@@ -1,0 +1,37 @@
+.homeApp {
+    margin: 10px;
+    text-align: center;
+}
+.moneyPit{
+    margin: auto;
+    width: 250px;
+    height: 100px;
+    border-style: solid;
+    border-radius: 15px;
+    margin-top: 10px;
+}
+
+.newCrapList {
+    margin: auto;
+    margin-top: 7px;
+    width: 700px;
+    height: 70px;
+    border-style: solid;
+}
+
+.insideCrapList {
+    display: flex;
+    justify-content: space-around;
+}
+
+.monies {
+    font-size: 50px;
+    margin-top: 10px;
+}
+
+.friends {
+    margin: auto;
+    width: 175px;
+    height: 300px;
+    border-style: solid;
+}
