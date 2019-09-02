@@ -3,7 +3,10 @@ import './Home.css'
 import axios from 'axios'
 
 let baseUrl = '/api/paradisefalls'
-let peopleUrl = '/api/paradisefalls/people'
+
+function financial(x) {
+    return Number.parseFloat(x).toFixed(2);
+  }
 
 class Home extends Component {
     state = {
@@ -12,15 +15,19 @@ class Home extends Component {
     }
 
     componentDidMount() {
-        const firstRequest = axios.get(baseUrl)
-            .then(response => this.setState({ items: response.data }))
-        const secondRequest = axios.get(peopleUrl)
-            .then(response => this.setState({ people: response.data }))
+        axios.get(baseUrl)
+            .then(response => {
+                this.setState({
+                    items: response.data
+                })
+                return axios.get(`${baseUrl}/people`)
+            })
+            .then((response) => {
+                this.setState({
+                    people: response.data
+                })
+            })
 
-        // Promise.all([firstRequest, secondRequest])
-        //         .then(()=>{
-        //             return 
-        //         })
         // axios.get(baseUrl)
         //     .then((response) => {
         //         this.setState({
@@ -33,28 +40,32 @@ class Home extends Component {
     render() {
         let amountSaved = this.state.items.reduce((r, e, i) => {
             return r += e.amount_saved
-        }, 0)
+        }, 0).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')
         let amountNeeded = this.state.items.reduce((r, e) => {
             return r += (e.price - e.amount_saved)
-        }, 0)
+        }, 0).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')
 
         let friends = this.state.people.map((e, i) => {
-            console.log(e.name)
+            return <div key={e.id}>{e.first_name}</div>
         })
         return (
             <div className='homeApp'>
-                <div className='friends'>
-                    {friends}
-                </div>
-                <div className='moneyPit'>
-                    <u>You've Saved</u>
-                    <br />
-                    <div className='monies'>${amountSaved}</div>
-                </div>
-                <div className='moneyPit'>
-                    <u>You Need</u>
-                    <br />
-                    <div className='monies'>${amountNeeded}</div>
+                <div className='topHalfHome'>
+                    <div className='friends'>
+                        {friends}
+                    </div>
+                    <div>
+                        <div className='moneyPit'>
+                            <u>You've Saved</u>
+                            <br />
+                            <div className='monies'>${amountSaved}</div>
+                        </div>
+                        <div className='moneyPit'>
+                            <u>You Need</u>
+                            <br />
+                            <div className='monies'>${amountNeeded}</div>
+                        </div>
+                    </div>
                 </div>
                 <section className='newCrapList'>
                     <div className='insideCrapList'>

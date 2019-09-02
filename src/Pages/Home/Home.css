@@ -25,13 +25,17 @@
 }
 
 .monies {
-    font-size: 50px;
+    font-size: 30px;
     margin-top: 10px;
 }
 
 .friends {
-    margin: auto;
     width: 175px;
     height: 300px;
     border-style: solid;
+}
+
+.topHalfHome {
+    display: flex;
+    justify-content: space-around;
 }

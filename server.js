@@ -36,7 +36,7 @@ app.post('/api/paradisefalls', (req, res, next) => {
 ///////////////////////////////////////////////////
 //People
 
-app.get('/api/paridisefalls/people', (req, res, next)=>{
+app.get('/api/paradisefalls/people', (req, res, next)=>{
     const db = app.get('db')
     db.people.find()
     .then((people)=>{
