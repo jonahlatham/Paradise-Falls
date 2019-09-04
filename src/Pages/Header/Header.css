@@ -1,14 +1,48 @@
 
 .header {
     width: 100%;
-    padding: 20px;
-    background: #e2be64;
+    padding-left: 7px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background: #953263;
     display: flex;
+    justify-content: space-between;
+}
+
+.pagesInHeader {
     justify-content: flex-start;
+}
+
+.loginInHeader {
+    margin-right: 5px;
 }
 
 .link {
     text-decoration: none;
     color: white;
     margin-right: 10px;
+}
+
+.link:hover {
+    opacity: .5;
+    cursor: pointer;
+}
+
+.loginLink {
+}
+
+.loginLink:hover {
+    opacity: 1;
+    color: red;
+}
+
+.logoutButton {
+    border: none;
+    background: #953263;
+    color: white;
+}
+
+.logoutButton:hover {
+    opacity: .5;
+    cursor: pointer;
 }

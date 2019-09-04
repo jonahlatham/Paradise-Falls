@@ -1,8 +1,8 @@
-
 .flexedItems {
     padding: 20px;
     display: flex;
     flex-wrap: wrap;
+    /* justify-content: space-between; */
 }
 
 .savedItems {
@@ -12,4 +12,9 @@
     box-shadow: -5px 5px 5px gray;
     padding: 7px;
     border-radius: 15px;
-  }
+}
+
+.side {
+    margin: auto;
+    flex-direction: column;
+}

@@ -16,7 +16,7 @@ class Home extends Component {
 
     componentDidMount() {
         axios.get(baseUrl)
-            .then(response => {
+            .then((response) => {
                 this.setState({
                     items: response.data
                 })

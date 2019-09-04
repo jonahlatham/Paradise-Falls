@@ -1,0 +1,24 @@
+.loginApp {
+    display: flex;
+    flex-direction: column;
+}
+
+.loginDiv {
+    width: 150px;
+    margin: auto;
+}
+
+.registerLink {
+    color: black;
+}
+
+.loginInputs {
+    margin-top: 10px;
+    width: 100%;
+    height: 20px;
+    padding-left: 3px;
+}
+
+.loginButton {
+    margin-top: 10px;
+}
