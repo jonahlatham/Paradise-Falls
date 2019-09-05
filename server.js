@@ -139,8 +139,12 @@ app.post('/api/paradisefalls', (req, res, next) => {
 })
 
 app.put('/api/paradisefalls', (req, res, next) => {
-    const db = app.get('db')
-    
+    // const db = app.get('db')
+    // const { amount_saved } = req.body
+    // db.wanted_items.insert({ name, price, people_id, amount_saved: req.body })
+    //     .then((items) => {
+    //         res.send(items)
+    //     })
 })
 
 ///////////////////////////////////////////////////

@@ -8,6 +8,7 @@ class ItemsSavingFor extends Component {
 
   state = {
     listedItems: [],
+    amount_saved: ''
   }
 
   componentDidMount() {
@@ -19,13 +20,24 @@ class ItemsSavingFor extends Component {
       })
   }
 
+  handleEdit = () => {
+    // body = {
+    //   amount_saved: ''
+    // }
+    // if(click === true){
+    //   return <div><input type="text"/> <button>Save</button></div>
+    // } else {
+    //   alert('ya pooped the bed')
+    // }
+  }
+
   render() {
     let evens = this.state.listedItems.map((e, i) => {
       if (i % 2 === 0) {
         return <div key={i} className='savedItems'>Name: {e.name} <br />
           Price: {e.price} <br />
           Amount Saved: {e.amount_saved} <br />
-          <button>Edit</button></div>
+          <button onClick={this.handleEdit}>Edit</button></div>
       }
     })
     let odds = this.state.listedItems.map((e, i) => {

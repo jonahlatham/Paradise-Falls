@@ -37,7 +37,11 @@ class Login extends Component {
             <div className='loginApp'>
                 <div className='loginDiv'>
                     <input className='loginInputs' name='email' value={this.state.email} placeholder='Email' onChange={this.handleChange} type="text" />
-                    <input className='loginInputs' name='password' value={this.state.password} placeholder='Password' onChange={this.handleChange} type="password" />
+                    <input className='loginInputs' name='password' value={this.state.password} placeholder='Password' onChange={this.handleChange} type="password"     onKeyPress={event => {
+                if (event.key === 'Enter') {
+                  this.handleLogin()
+                }
+              }}/>
                     <button className='loginButton' onClick={this.handleLogin}>Login</button>
                 </div>
 

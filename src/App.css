@@ -1,12 +1,16 @@
 .App {
-  text-align: center;
-  margin-bottom: 5px;
+    text-align: center;
+    margin-bottom: 5px;
 }
 
 input:focus {
-  outline: none;
+    outline: none;
 }
 
-button:focus{
-  outline: none;
+button:focus {
+    outline: none;
+}
+
+button:hover {
+    cursor: pointer;
 }

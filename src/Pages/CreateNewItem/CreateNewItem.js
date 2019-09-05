@@ -35,7 +35,11 @@ class CreateNewItem extends Component {
             <div className='inputs'>
                 <input placeholder='Name of Item' className='addInputs' onChange={this.handleChange} type="text" name="name" value={this.state.name} /> <br />
                 <input placeholder='Price' className='addInputs' onChange={this.handleChange} type="text" name="price" value={this.state.price} /> <br />
-                <input placeholder='Amount Saved' className='addInputs' onChange={this.handleChange} type="text" name="amount_saved" value={this.state.amount_saved} />
+                <input placeholder='Amount Saved' className='addInputs' onChange={this.handleChange} type="text" name="amount_saved" value={this.state.amount_saved}     onKeyPress={event => {
+                if (event.key === 'Enter') {
+                  this.handleAdd()
+                }
+              }}/>
                 <button className='addCrap' onClick={this.handleAdd}>Add it</button>
             </div>
         )

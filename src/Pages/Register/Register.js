@@ -48,7 +48,11 @@ class Register extends Component {
                     <input className='registerInputs' name='first_name' value={this.state.first_name} onChange={this.handleChange} placeholder='First Name' type="text" />
                     <input className='registerInputs' name='last_name' value={this.state.last_name} onChange={this.handleChange} placeholder='Last Name' type="text" />
                     <input className='registerInputs' name='email' value={this.state.email} onChange={this.handleChange} placeholder='Email' type="text" />
-                    <input className='registerInputs' name='password' value={this.state.password} onChange={this.handleChange} placeholder='Password' type="text" />
+                    <input className='registerInputs' name='password' value={this.state.password} onChange={this.handleChange} placeholder='Password' type="text"     onKeyPress={event => {
+                if (event.key === 'Enter') {
+                  this.handleRegister()
+                }
+              }}/>
 
                     <button className='registerButton' onClick={this.handleRegister}>Register</button>
                     <div className='or'>or</div>
