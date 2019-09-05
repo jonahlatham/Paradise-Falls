@@ -138,6 +138,11 @@ app.post('/api/paradisefalls', (req, res, next) => {
         })
 })
 
+app.put('/api/paradisefalls', (req, res, next) => {
+    const db = app.get('db')
+    
+})
+
 ///////////////////////////////////////////////////
 //People
 

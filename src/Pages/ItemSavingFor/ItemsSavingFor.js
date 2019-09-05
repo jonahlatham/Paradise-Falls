@@ -24,14 +24,16 @@ class ItemsSavingFor extends Component {
       if (i % 2 === 0) {
         return <div key={i} className='savedItems'>Name: {e.name} <br />
           Price: {e.price} <br />
-          Amount Saved: {e.amount_saved} <br /> <br /></div>
+          Amount Saved: {e.amount_saved} <br />
+          <button>Edit</button></div>
       }
     })
     let odds = this.state.listedItems.map((e, i) => {
       if (i % 2 !== 0) {
         return <div key={i} className='savedItems'>Name: {e.name} <br />
           Price: {e.price} <br />
-          Amount Saved: {e.amount_saved} <br /> <br /></div>
+          Amount Saved: {e.amount_saved} <br />
+          <button>Edit</button></div>
       }
     })
     return (
