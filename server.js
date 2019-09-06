@@ -21,7 +21,7 @@ app.use(session({
     secret: process.env.SESSION_SECRET,
     cookie: {
         //days hours minutes seconds milseconds
-        expires: 5 * 24 * 60 * 60 * 1000,
+        expires: 1 * 24 * 60 * 60 * 1000,
     },
     saveUninitialized: false,
     rolling: true,
