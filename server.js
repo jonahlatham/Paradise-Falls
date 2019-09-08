@@ -68,7 +68,7 @@ app.post('/auth/login', (req, res, next) => {
         .then((user) => {
             if (!user) {
                 // throw error if user already exists
-                throw 'We could not find a user for this email. Please rgister.'
+                throw 'We could not find a user for this email. Please register.'
             } else {
                 // compare password
                 catchUser = user;
@@ -139,12 +139,12 @@ app.post('/api/paradisefalls', (req, res, next) => {
 })
 
 app.put('/api/paradisefalls', (req, res, next) => {
-    // const db = app.get('db')
-    // const { amount_saved } = req.body
-    // db.wanted_items.insert({ name, price, people_id, amount_saved: req.body })
-    //     .then((items) => {
-    //         res.send(items)
-    //     })
+    const db = app.get('db')
+    const { amount_saved, id } = req.body
+    db.wanted_items.update({ id }, { amount_saved })
+        .then((items) => {
+            res.send(items)
+        })
 })
 
 ///////////////////////////////////////////////////

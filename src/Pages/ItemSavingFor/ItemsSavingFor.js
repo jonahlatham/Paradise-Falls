@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import './ItemsSavingFor.css'
+import ItemSavingFor from './ItemSavingFor/ItemSavingFor'
 
 let baseUrl = '/api/paradisefalls'
 
@@ -8,38 +9,30 @@ class ItemsSavingFor extends Component {
 
   state = {
     listedItems: [],
-    amount_saved: ''
+    amount_saved: '',
   }
 
   componentDidMount() {
     axios.get(baseUrl)
       .then((response) => {
         this.setState({
-          listedItems: response.data
+          listedItems: response.data.map((e, i) => {
+            e.isEdit = false
+            return e
+          })
         })
       })
   }
 
-  handleEdit = () => {
-    // body = {
-    //   amount_saved: ''
-    // }
-    // if(click === true){
-    //   return <div><input type="text"/> <button>Save</button></div>
-    // } else {
-    //   alert('ya pooped the bed')
-    // }
-  }
+  
 
   render() {
     let evens = this.state.listedItems.map((e, i) => {
       if (i % 2 === 0) {
-        return <div key={i} className='savedItems'>Name: {e.name} <br />
-          Price: {e.price} <br />
-          Amount Saved: {e.amount_saved} <br />
-          <button onClick={this.handleEdit}>Edit</button></div>
+        return 
       }
     })
+
     let odds = this.state.listedItems.map((e, i) => {
       if (i % 2 !== 0) {
         return <div key={i} className='savedItems'>Name: {e.name} <br />
