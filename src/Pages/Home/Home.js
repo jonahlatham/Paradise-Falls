@@ -27,14 +27,6 @@ class Home extends Component {
                     people: response.data
                 })
             })
-
-        // axios.get(baseUrl)
-        //     .then((response) => {
-        //         this.setState({
-        //             items: response.data,
-
-        //         })
-        //     })
     }
 
     render() {

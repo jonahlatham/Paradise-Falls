@@ -46,4 +46,4 @@ class CreateNewItem extends Component {
     }
 }
 
-export default CreateNewItem
+export default CreateNewItem 
