@@ -6,7 +6,7 @@ let baseUrl = '/api/paradisefalls'
 class CreateNewItem extends Component {
     state = {
         name: '',
-        price: '',
+        price: '',  
         amount_saved: '',
     }
 
