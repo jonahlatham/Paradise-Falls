@@ -143,6 +143,9 @@ app.put('/api/paradisefalls', (req, res, next) => {
     const { amount_saved, id } = req.body
     db.wanted_items.update({ id }, { amount_saved })
         .then((items) => {
+            return db.get.get_items({ people_id: req.session.user.id })
+        })
+        .then((items) => {
             res.send(items)
         })
 })

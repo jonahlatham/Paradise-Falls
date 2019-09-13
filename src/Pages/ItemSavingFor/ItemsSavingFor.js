@@ -24,21 +24,22 @@ class ItemsSavingFor extends Component {
       })
   }
 
-  
+  handleUpdate = (data) => {
+        this.setState({
+          listedItems: data
+        })
+  }
 
   render() {
     let evens = this.state.listedItems.map((e, i) => {
       if (i % 2 === 0) {
-        return 
+        return <ItemSavingFor key={e.id} handleUpdate={this.handleUpdate} item={e} />
       }
     })
 
     let odds = this.state.listedItems.map((e, i) => {
       if (i % 2 !== 0) {
-        return <div key={i} className='savedItems'>Name: {e.name} <br />
-          Price: {e.price} <br />
-          Amount Saved: {e.amount_saved} <br />
-          <button>Edit</button></div>
+        return <ItemSavingFor key={e.id} handleUpdate={this.handleUpdate} item={e} />
       }
     })
     return (

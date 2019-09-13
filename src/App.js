@@ -43,18 +43,22 @@ export default class App extends Component {
   }
 
   render() {
+    let crap = ''
+    if (this.state.user) {
+      crap = <div>
+        <Route path="/Home" component={Home} />
+        <Route path="/ItemsSavingFor" component={ItemsSavingFor} />
+        <Route path="/CreateNewItem" component={CreateNewItem} />
+      </div>
+    }
+
 
     return (
       <div className='App'>
         <Router>
           <Header handleLogout={this.handleLogout} user={this.state.user} />
           <Switch>
-            {
-              this.state.user ? (<div>
-                <Route path="/Home" component={Home} />
-                <Route path="/ItemsSavingFor" component={ItemsSavingFor} />
-                <Route path="/CreateNewItem" component={CreateNewItem} /></div>) : ''
-            }
+            {crap}
             <Route path="/Register" render={(props) => <Register {...props} setUser={this.setUser} />} />
             <Route path="/" render={(props) => <Login {...props} setUser={this.setUser} />} />
           </Switch>
