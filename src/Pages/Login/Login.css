@@ -14,12 +14,40 @@
 }
 
 .loginInputs {
-    margin-top: 10px;
+    margin-top: 30px;
     width: 100%;
     height: 20px;
     padding-left: 3px;
+    border: none;
+    border-radius: 5px;
+}
+
+.loginInputs:focus {
+    outline: #c932329f;
+    width: 103%;
+    height: 27px;
 }
 
 .loginButton {
     margin-top: 10px;
+}
+
+.loginImg {
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: .5;
+}
+
+.loginMainDiv {
+    width: 40%;
+    height: 300px;
+    padding-top: 75px;
+    background: #a39f9f6e;
+    margin: auto;
+    margin-top: 25px;
+    border-radius: 25px;
 }

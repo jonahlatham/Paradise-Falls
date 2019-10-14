@@ -3,7 +3,6 @@
     padding-left: 7px;
     padding-top: 20px;
     padding-bottom: 20px;
-    background: #79080a;
     display: flex;
     justify-content: space-between;
 }
@@ -18,7 +17,6 @@
 
 .link {
     text-decoration: none;
-    color: white;
     margin-right: 10px;
 }
 
@@ -26,8 +24,6 @@
     opacity: .5;
     cursor: pointer;
 }
-
-.loginLink {}
 
 .loginLink:hover {
     opacity: 1;

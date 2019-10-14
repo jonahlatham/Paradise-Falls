@@ -44,6 +44,7 @@ class Register extends Component {
     render() {
         return (
             <div className='registerApp'>
+                <div><img className='registerImg' src="https://images.unsplash.com/photo-1527155781285-a10fb8d2be02?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80" alt="img"/></div>
                 <div className='registerDiv'>
                     <input className='registerInputs' name='first_name' value={this.state.first_name} onChange={this.handleChange} placeholder='First Name' type="text" />
                     <input className='registerInputs' name='last_name' value={this.state.last_name} onChange={this.handleChange} placeholder='Last Name' type="text" />
