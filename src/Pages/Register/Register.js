@@ -53,7 +53,7 @@ class Register extends Component {
                 if (event.key === 'Enter') {
                   this.handleRegister()
                 }
-              }}/>
+              }}/> 
 
                     <button className='registerButton' onClick={this.handleRegister}>Register</button>
                     <div className='or'>or</div>
